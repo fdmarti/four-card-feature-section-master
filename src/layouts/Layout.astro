@@ -1,0 +1,68 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='description' content='Astro description' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/x-icon' href='/images/favicon-32x32.png' />
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap'
+			rel='stylesheet'
+		/>
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--red: hsl(0, 78%, 62%);
+		--cyan: hsl(180, 62%, 55%);
+		--orange: hsl(34, 97%, 64%);
+		--blue: hsl(212, 86%, 64%);
+
+		--veryDarkBlue: hsl(234, 12%, 34%);
+		--greyshBlue: hsl(229, 6%, 66%);
+		--veryLightGray: hsl(0, 0%, 98%);
+		--white: #fff;
+	}
+
+	* {
+		font-family: 'Poppins', sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background-color: var(--veryLightGray);
+		color: var(--veryDarkBlue);
+	}
+
+	main {
+		margin: 0 auto;
+		max-width: 1440px;
+		padding: 0 20px;
+	}
+
+	p {
+		color: var(--greyshBlue);
+	}
+
+	@media (max-width: 1200px) {
+		main {
+			padding: 0 20px 20px 20px;
+		}
+	}
+</style>

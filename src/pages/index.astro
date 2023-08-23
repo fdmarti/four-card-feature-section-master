@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Title from '../components/Title.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title='Frontend Mentor | Four card feature section'>
+	<main>
+		<Title />
+		<div class='cards'>
+			<Card
+				title='Supervisor'
+				text='Monitors activity to identify project roadblocks'
+				imageUrl='icon-supervisor.svg'
+				color='cyan-border'
+			/>
+			<section class='middle-cards'>
+				<Card
+					title='Team Builder'
+					text='Scans our talent network to create the optimal team for your project'
+					imageUrl='icon-team-builder.svg'
+					color='red-border'
+				/>
+				<Card
+					title='Karma'
+					text='Regularly evaluates our talent to ensure quality'
+					imageUrl='icon-karma.svg'
+					color='orange-border'
+				/>
+			</section>
+			<Card
+				title='Calculator'
+				text='Uses data from past projects to provide better delivery estimates'
+				imageUrl='icon-calculator.svg'
+				color='blue-border'
+			/>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.cards {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+
+		margin-top: 40px;
+	}
+
+	.middle-cards {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	@media (max-width: 1200px) {
+		.cards {
+			flex-direction: column;
+		}
+	}
+</style>
